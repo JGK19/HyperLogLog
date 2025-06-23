@@ -5,7 +5,7 @@ import math
 from HyperLogLog import HLL
 
 def main():
-    N = 1000000000 # Numero de elementos distintos no conjunto
+    N = 1000 # Numero de elementos distintos no conjunto
     b = 7
     numero_registradores = 2**b
 

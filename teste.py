@@ -34,6 +34,12 @@ def gerar_strings_distintas(N, K):
 
     return list(strings)
 
+def gerar_lista_letras_mistas(N):
+    return random.choices(string.ascii_letters, k=N)
+
+def gerar_lista_letras(N):
+    return random.choices(string.ascii_uppercase, k=N)
+
 def divide_bits(n, b):
     mascara = (1 << b) - 1          
     bits_direita = n & mascara      
@@ -44,12 +50,13 @@ def hash32(s):
     h = hashlib.sha1(s.encode()).hexdigest()
     return int(h[:8], 16)
 
-N = 1000000
-U = gerar_strings_distintas(N, 7)
-U = U + U
+N = 1000
+"""U = gerar_strings_distintas(N, 7)
+U = U + U"""
+U = gerar_lista_letras(N)
 print(len(U))
 
-b = 7
+b = 4
 m = 2**b
 M_registers = [0 for _ in range(m)]
 print(N, m*math.log2(m))
